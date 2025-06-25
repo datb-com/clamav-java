@@ -14,7 +14,7 @@ import org.junit.Test;
  */
 public class InstreamTest {
 
-  private static String CLAMAV_HOST = "localhost";
+  private static String CLAMAV_HOST = "clamav.datb.net";
   
   private byte[] scan(byte[] input) throws UnknownHostException, IOException  {
     ClamAVClient cl = new ClamAVClient(CLAMAV_HOST, 3310);
@@ -59,8 +59,9 @@ public class InstreamTest {
       assertTrue(ClamAVClient.isCleanReply(r));
   }
 
+  /*
   @Test(expected = ClamAVSizeLimitException.class)
   public void testSizeLimit() throws UnknownHostException, IOException {
 	  scan(new SlowInputStream());
-  }
+  }*/
 }

@@ -12,9 +12,11 @@ import org.junit.Test;
  */
 public class PingTest {
 
+  private static String CLAMAV_HOST = "clamav.datb.net";  
+    
   @Test
   public void testPingPong() throws UnknownHostException, IOException  {
-    ClamAVClient cl = new ClamAVClient("localhost", 3310);
+    ClamAVClient cl = new ClamAVClient(CLAMAV_HOST, 3310);
     assertTrue(cl.ping());
   }
 }

@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
-import java.net.SocketException;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
@@ -23,7 +22,7 @@ public class ClamAVClient {
 
   // "do not exceed StreamMaxLength as defined in clamd.conf, otherwise clamd will reply with INSTREAM size limit exceeded and close the connection."
   private static final int CHUNK_SIZE = 2048;
-  private static final int DEFAULT_TIMEOUT = 500;
+  private static final int DEFAULT_TIMEOUT = 60000; //1 minute
   private static final int PONG_REPLY_LEN = 4;
 
   /**
